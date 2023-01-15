@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # django InteriaJS apps
+    'django_vite',
+    'inertia'
+    # our apps
 ]
 
 MIDDLEWARE = [
@@ -47,6 +51,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # django inertiaJS Middleware
+    'inertia.middleware.InertiaMiddleware'
 ]
 
 ROOT_URLCONF = 'contact_manager.urls'
@@ -54,7 +60,7 @@ ROOT_URLCONF = 'contact_manager.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,3 +127,29 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# InertiaJS Related settings
+INERTIA_LAYOUT = 'base.html'
+
+# We need this for django form posting
+CSRF_HEADER_NAME = 'HTTP_X_XSRF_TOKEN'
+CSRF_COOKIE_NAME = 'XSRF-TOKEN'
+
+# Where ViteJS assets are built.
+DJANGO_VITE_ASSETS_PATH = BASE_DIR / "react-app" / "dist"
+
+# If we should use HMR or not.
+DJANGO_VITE_DEV_MODE = DEBUG
+
+# we need this to get around cors issues
+DJANGO_VITE_DEV_SERVER_HOST = '127.0.0.1'
+
+# this is the default, but I'm leaving this here, so you know what to change if you want to run on a different port
+DJANGO_VITE_PORT = 3000
+
+# Name of our static files' folder (after called python manage.py collectstatic)
+STATIC_ROOT = BASE_DIR / "static"
+
+# Include DJANGO_VITE_ASSETS_PATH into STATICFILES_DIRS to be copied inside
+# when run command python manage.py collectstatic
+STATICFILES_DIRS = [DJANGO_VITE_ASSETS_PATH]

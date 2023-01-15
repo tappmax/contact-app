@@ -19,4 +19,12 @@ python -m venv .venv
 .venv\Scripts\activate
 pip install Django==4.1
 pip install --upgrade pip
-./manage.py runserver
+manage.py runserver
+
+all good for a long time
+
+HAH! 'Acid Burn', 'Crash Override', 'Lord Nikon', very nice.
+
+No tsx smh... just kidding :)
+
+

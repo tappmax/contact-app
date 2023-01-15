@@ -1,7 +1,12 @@
 import { resolve }  from 'path';
+import react from '@vitejs/plugin-react';
 
 module.exports = {
- plugins: [],
+ plugins: [
+   react({
+     include: '**/*.disabled',
+   }),
+ ],
  root: resolve('./react-app'),
  base: '/static/',
  server: {
@@ -24,7 +29,7 @@ module.exports = {
    target: 'es2015',
    rollupOptions: {
      input: {
-       main: resolve('./react-app/src/main.js'),
+       main: resolve('./react-app/src/main.jsx'),
      },
      output: {
        chunkFileNames: undefined,

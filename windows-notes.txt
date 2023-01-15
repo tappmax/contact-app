@@ -6,7 +6,7 @@ pip 22.3.1
 pipenv, version 2022.12.19
 
 python3 -m venv .venv # doesn't work
-python -m venv .venv does # works
+python -m venv .venv # works
 
 source .venv/bin/activate # 'source' is not recognized as an internal or external command, operable program or batch file.
 .venv\Scripts\activate # works
@@ -25,6 +25,4 @@ all good for a long time
 
 HAH! 'Acid Burn', 'Crash Override', 'Lord Nikon', very nice.
 
-No tsx smh... just kidding :)
-
-
+yep, the rest is the same and works great! Very nice tutorial!

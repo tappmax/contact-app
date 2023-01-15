@@ -1,0 +1,22 @@
+
+using:
+Microsoft Windows 10 Pro 10.0.19044 Build 19044
+Python 3.11.1
+pip 22.3.1
+pipenv, version 2022.12.19
+
+python3 -m venv .venv # doesn't work
+python -m venv .venv does # works
+
+source .venv/bin/activate # 'source' is not recognized as an internal or external command, operable program or batch file.
+.venv\Scripts\activate # works
+
+
+'ls' equivalent on windows is 'dir'
+
+# All the commands on windows
+python -m venv .venv
+.venv\Scripts\activate
+pip install Django==4.1
+pip install --upgrade pip
+./manage.py runserver
